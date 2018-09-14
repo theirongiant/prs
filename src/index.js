@@ -1,0 +1,11 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends Component {
+    render() {
+        return <h1>Hello World!</h1>;
+    }
+}
+
+const root = document.findElementById('root');
+root ? ReactDOM.render(<App />, root) : console.error("Unable to find 'root' to mount app!");
