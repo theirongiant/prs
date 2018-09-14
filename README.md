@@ -34,6 +34,18 @@ Babel does the transpiling for us, the two presets will allow webpack to use the
 .babelrc is where we configure what plugins we want babel to use.
 
 NOTE: Previous version of babel (< v7) would have used `npm install --save -dev babel-core babel-loader babel-preset-env babel-preset-react`
-In version 7 they moved the various packages in the @babel scope. [Info on npm scopes](https://docs.npmjs.com/misc/scope)
+In version 7 they moved the various packages in the @babel scope, essentially this is just an 
 
-### [Configure webpack to use babel]()
+[Info on npm scopes](https://docs.npmjs.com/misc/scope)
+
+### [Configure webpack to use babel](https://github.com/theirongiant/prs/commit/8a6f2e5550f07d4707dd381656e5f789603785ca)
+
+Added a webpack.connfig.js file in which we set up a rule telling webpack that if it finds any .js files to process them with the babel-loader before bundling. Also make sure we exclude the node_mondules directory.
+
+Then we added a simple Hello World! react script. 
+
+An addition was made to the package.json scripts section `"build": "webpack --mode production`
+When we run this with `npm run build` it will transpile and build our code according to the rules in webpack.config.js and put the resulting bundle in dist/ as main.js
+
+We lastly added the dist/ folder to our gitignore.
+
