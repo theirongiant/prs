@@ -33,4 +33,7 @@ Babel does the transpiling for us, the two presets will allow webpack to use the
 
 .babelrc is where we configure what plugins we want babel to use.
 
+NOTE: Previous version of babel (< v7) would have used `npm install --save -dev babel-core babel-loader babel-preset-env babel-preset-react`
+In version 7 they moved the various packages in the @babel scope. [Info on npm scopes](https://docs.npmjs.com/misc/scope)
+
 ### [Configure webpack to use babel]()
